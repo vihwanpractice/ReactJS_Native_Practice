@@ -2,9 +2,12 @@ import React from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 
 class CounterButton extends React.Component{
-  state = {
-    counter: 0,
-  };
+  constructor(props){
+    super(props);
+    this.state = {
+      counter: props.counter,
+    };
+  }
 
   clickHandler = () => {
     this.setState({
@@ -15,8 +18,8 @@ class CounterButton extends React.Component{
   render(){
     return (
       <View>
-        <Text style={styles.Text}>Hello, world!</Text>
-        <Text style={[styles.textBig, styles.textRed]}>Hello, World!</Text>
+        {/* <Text style={styles.Text}>Hello, world!</Text>
+        <Text style={[styles.textBig, styles.textRed]}>Hello, World!</Text> */}
         <Button title={'click me!'} onPress={() => this.clickHandler}></Button>
         <Text>{this.state.counter}</Text>
       </View>
@@ -30,10 +33,10 @@ export default class App extends React.Component {
   render(){
     return (
       <View style={styles.container}>
-        <CounterButton/>
-        <CounterButton />
-        <CounterButton />
-        <CounterButton />
+        <CounterButton counter={0}/>
+        <CounterButton counter={1}/>
+        <CounterButton counter={2}/>
+        <CounterButton counter={3}/>
       </View>
     )
   }
@@ -53,7 +56,6 @@ const styles = StyleSheet.create({
   },
 
   textBig: {
-
     fontSize : 32,
   }
 });
