@@ -55,7 +55,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    alignItems: 'center',
   },
 
   textRed: {
@@ -68,5 +67,9 @@ const styles = StyleSheet.create({
 
   buttonContainer: {
     width: '100%',
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
   }
 });
